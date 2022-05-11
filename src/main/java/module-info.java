@@ -6,7 +6,9 @@ module WeatherApp {
     requires javafx.base;
 
     opens com.dariuszkrygier to javafx.fxml;
-    opens com.dariuszkrygier.controller;
-    opens com.dariuszkrygier.view to javafx.fxml;
     exports com.dariuszkrygier;
+    opens com.dariuszkrygier.controller;
+    exports com.dariuszkrygier.controller;
+    opens com.dariuszkrygier.view to javafx.fxml;
+    
 }
