@@ -1,12 +1,14 @@
 package com.dariuszkrygier.controller;
 
+import com.dariuszkrygier.WeatherManager;
+import com.dariuszkrygier.view.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
-public class MainWindowController {
+public class MainWindowController extends BaseController {
 
     @FXML
     private TextField SecondCityPicker;
@@ -176,6 +178,7 @@ public class MainWindowController {
     @FXML
     private Label secondCityThirdDayTemp;
 
+
     @FXML
     void changeFirstCityLocationButtonAction() {
 
@@ -185,6 +188,11 @@ public class MainWindowController {
     void changeSecondCityLocationButtonAction() {
 
     }
+
+    public MainWindowController(WeatherManager weatherManager, ViewFactory viewFactory, String fxmlName) {
+        super(weatherManager, viewFactory, fxmlName);
+    }
+
 
 
 }

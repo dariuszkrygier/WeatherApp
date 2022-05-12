@@ -10,5 +10,5 @@ module WeatherApp {
     opens com.dariuszkrygier.controller;
     exports com.dariuszkrygier.controller;
     opens com.dariuszkrygier.view to javafx.fxml;
-    
+
 }
