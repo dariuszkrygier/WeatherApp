@@ -192,7 +192,8 @@ public class MainWindowController extends BaseController {
     public MainWindowController(WeatherManager weatherManager, ViewFactory viewFactory, String fxmlName) {
         super(weatherManager, viewFactory, fxmlName);
     }
-
+        this.firstCityWeather = weatherManager.getFirstCityWeather();
+        this.secondCityWeather = weatherManager.getSecondCityWeather();
 
 
 }

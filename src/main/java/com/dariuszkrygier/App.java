@@ -1,17 +1,17 @@
 package com.dariuszkrygier;
 
 
+import com.dariuszkrygier.controller.services.FetchWeatherService;
 import com.dariuszkrygier.view.ViewFactory;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import net.aksingh.owmjapis.api.APIException;
 
 public class App extends Application
 {
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws APIException {
         launch(args);
+
     }
 
     @Override
@@ -19,6 +19,7 @@ public class App extends Application
 
         ViewFactory viewFactory = new ViewFactory(new WeatherManager());
         viewFactory.showMainWindow();
+
 
     }
 }

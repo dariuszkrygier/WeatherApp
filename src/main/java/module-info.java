@@ -4,6 +4,7 @@ module WeatherApp {
     requires javafx.graphics;
     requires javafx.web;
     requires javafx.base;
+    requires owm.japis;
 
     opens com.dariuszkrygier to javafx.fxml;
     exports com.dariuszkrygier;
