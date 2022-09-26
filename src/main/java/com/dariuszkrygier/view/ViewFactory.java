@@ -18,6 +18,7 @@ public class ViewFactory {
         this.weatherManager = weatherManager;
     }
 
+
     public void showMainWindow(){
         BaseController controller = new MainWindowController(weatherManager, this, "MainWindow.fxml");
         initializeStage(controller);

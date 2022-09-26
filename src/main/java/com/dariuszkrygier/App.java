@@ -1,7 +1,6 @@
 package com.dariuszkrygier;
 
 
-import com.dariuszkrygier.controller.services.FetchWeatherService;
 import com.dariuszkrygier.view.ViewFactory;
 import javafx.application.Application;
 import javafx.stage.Stage;

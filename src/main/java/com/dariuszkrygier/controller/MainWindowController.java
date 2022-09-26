@@ -1,6 +1,8 @@
 package com.dariuszkrygier.controller;
 
 import com.dariuszkrygier.WeatherManager;
+import com.dariuszkrygier.controller.services.WeatherService;
+import com.dariuszkrygier.model.WeatherDto;
 import com.dariuszkrygier.view.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -178,6 +180,12 @@ public class MainWindowController extends BaseController {
     @FXML
     private Label secondCityThirdDayTemp;
 
+    public MainWindowController(WeatherManager weatherManager, ViewFactory viewFactory, String fxmlName) {
+        super(weatherManager, viewFactory, fxmlName);
+        //this.firstCityWeatherInformation = weatherManager.getFirstCityWeather();
+       // this.secondCityWeatherInformation = weatherManager.getSecondWeather();
+    }
+
 
     @FXML
     void changeFirstCityLocationButtonAction() {
@@ -189,11 +197,7 @@ public class MainWindowController extends BaseController {
 
     }
 
-    public MainWindowController(WeatherManager weatherManager, ViewFactory viewFactory, String fxmlName) {
-        super(weatherManager, viewFactory, fxmlName);
-    }
-        this.firstCityWeather = weatherManager.getFirstCityWeather();
-        this.secondCityWeather = weatherManager.getSecondCityWeather();
+
 
 
 }
