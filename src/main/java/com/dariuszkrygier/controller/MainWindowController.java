@@ -1,8 +1,6 @@
 package com.dariuszkrygier.controller;
 
 import com.dariuszkrygier.WeatherManager;
-import com.dariuszkrygier.controller.services.WeatherService;
-import com.dariuszkrygier.model.WeatherDto;
 import com.dariuszkrygier.view.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
