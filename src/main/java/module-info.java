@@ -9,6 +9,7 @@ module WeatherApp {
     requires spring.web;
     requires spring.context;
     requires lombok;
+    requires gson;
 
     opens com.dariuszkrygier to javafx.fxml;
     exports com.dariuszkrygier;
