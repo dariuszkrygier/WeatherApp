@@ -1,6 +1,8 @@
 package com.dariuszkrygier.controller;
 
 import com.dariuszkrygier.WeatherManager;
+import com.dariuszkrygier.model.CityReader;
+import com.dariuszkrygier.model.WeatherForecastFetcher;
 import com.dariuszkrygier.view.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -178,10 +180,13 @@ public class MainWindowController extends BaseController {
     @FXML
     private Label secondCityThirdDayTemp;
 
+    private final CityReader cityReader;
+    private final WeatherForecastFetcher weatherForecastFetcher;
+
     public MainWindowController(WeatherManager weatherManager, ViewFactory viewFactory, String fxmlName) {
         super(weatherManager, viewFactory, fxmlName);
-        //this.firstCityWeatherInformation = weatherManager.getFirstCityWeather();
-       // this.secondCityWeatherInformation = weatherManager.getSecondWeather();
+        cityReader = new CityReader();
+        weatherForecastFetcher = new WeatherForecastFetcher("0ba49489903c4598b912b5f5f80c5f46");
     }
 
 
