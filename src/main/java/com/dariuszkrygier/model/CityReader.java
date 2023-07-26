@@ -20,7 +20,7 @@ public class CityReader {
 
     private void loadJsonFile(){
 
-        try (var stream = new InputStreamReader(this.getClass().getResourceAsStream("com/dariuszkrygier/view/CityList.json"))) {
+        try (var stream = new InputStreamReader(this.getClass().getResourceAsStream("/com/dariuszkrygier/view/CityList.json"))) {
 
             JsonArray jsonArray = new JsonParser().parse(stream).getAsJsonArray();
 

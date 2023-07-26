@@ -1,20 +1,22 @@
 module WeatherApp {
-    requires javafx.fxml;
     requires javafx.controls;
+    requires javafx.fxml;
     requires javafx.graphics;
-    requires javafx.web;
-    requires javafx.base;
+   // requires javafx.web;
+    //requires javafx.base;
     requires owm.japis;
-    requires org.json;
-    requires spring.web;
-    requires spring.context;
-    requires lombok;
+    requires java.sql;
+   // requires org.json;
+   // requires spring.web;
+   // requires spring.context;
+    //requires lombok;
     requires gson;
+    requires org.controlsfx.controls;
 
     opens com.dariuszkrygier to javafx.fxml;
-    exports com.dariuszkrygier;
-    opens com.dariuszkrygier.controller;
-    exports com.dariuszkrygier.controller;
+    opens com.dariuszkrygier.controller to javafx.fxml;
     opens com.dariuszkrygier.view to javafx.fxml;
+    opens com.dariuszkrygier.model to javafx.fxml, gson;
 
+    exports com.dariuszkrygier;
 }

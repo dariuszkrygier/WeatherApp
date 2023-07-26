@@ -5,12 +5,12 @@ import com.dariuszkrygier.view.ViewFactory;
 
 public abstract class BaseController {
 
-    protected WeatherManager weatherManager;
+    //protected WeatherManager weatherManager;
     protected ViewFactory viewFactory;
-    private String fxmlName;
+    private final String fxmlName;
 
-    public BaseController(WeatherManager weatherManager, ViewFactory viewFactory, String fxmlName) {
-        this.weatherManager = weatherManager;
+    public BaseController( ViewFactory viewFactory, String fxmlName) {
+       // this.weatherManager = weatherManager;
         this.viewFactory = viewFactory;
         this.fxmlName = fxmlName;
     }

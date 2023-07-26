@@ -4,19 +4,19 @@ package com.dariuszkrygier;
 import com.dariuszkrygier.view.ViewFactory;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import net.aksingh.owmjapis.api.APIException;
+
 
 public class App extends Application
 {
-    public static void main( String[] args ) throws APIException {
+    public static void main( String[] args ) {
         launch(args);
 
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage)  {
 
-        ViewFactory viewFactory = new ViewFactory(new WeatherManager());
+        ViewFactory viewFactory = new ViewFactory();
         viewFactory.showMainWindow();
 
 

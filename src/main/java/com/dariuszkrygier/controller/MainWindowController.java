@@ -1,16 +1,22 @@
 package com.dariuszkrygier.controller;
 
-import com.dariuszkrygier.WeatherManager;
 import com.dariuszkrygier.model.CityReader;
 import com.dariuszkrygier.model.WeatherForecastFetcher;
 import com.dariuszkrygier.view.ViewFactory;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import net.aksingh.owmjapis.api.APIException;
+import org.controlsfx.control.textfield.TextFields;
 
-public class MainWindowController extends BaseController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainWindowController extends BaseController implements Initializable {
 
     @FXML
     private TextField SecondCityPicker;
@@ -183,24 +189,157 @@ public class MainWindowController extends BaseController {
     private final CityReader cityReader;
     private final WeatherForecastFetcher weatherForecastFetcher;
 
-    public MainWindowController(WeatherManager weatherManager, ViewFactory viewFactory, String fxmlName) {
-        super(weatherManager, viewFactory, fxmlName);
+    public MainWindowController(ViewFactory viewFactory, String fxmlName) {
+        super(viewFactory, fxmlName);
         cityReader = new CityReader();
         weatherForecastFetcher = new WeatherForecastFetcher("0ba49489903c4598b912b5f5f80c5f46");
     }
 
 
     @FXML
-    void changeFirstCityLocationButtonAction() {
-
+    void changeFirstCityLocationButtonAction() throws APIException {
+        if (firstFieldIsValid()) {
+            showCurrentWeather(firstCityPicker, firstCity, firstCityFirstDayDate, firstCityFirstDayImage,
+                    firstCityFirstDayTemp, firstCityFirstDayDescription );
+            //day2
+            showNextDays(firstCityPicker, 8, firstCitySecondDayDate, firstCitySecondDayImage,
+                    firstCitySecondDayTemp, firstCitySecondDayDescription);
+            //day3
+            showNextDays(firstCityPicker, 16, firstCityThirdDayDate, firstCityThirdDayImage,
+                    firstCityThirdDayTemp, firstCityThirdDayDescription);
+            //day4
+            showNextDays(firstCityPicker, 24, firstCityFourthDayDate, firstCityFourthDayImage,
+                    firstCityFourthDayTemp, firstCityFourthDayDescription);
+            //day5
+            showNextDays(firstCityPicker, 32, firstCityFifthDayDate, firstCityFifthDayImage,
+                    firstCityFifthDayTemp, firstCityFifthDayDescription);
+        }
     }
 
     @FXML
-    void changeSecondCityLocationButtonAction() {
+    void changeSecondCityLocationButtonAction() throws APIException{
+        if (secondFieldIsValid()) {
+            showCurrentWeather(SecondCityPicker, secondCity, secondCityFirstDayDate, secondCityFirstDayImage,
+                    secondCityFirstDayTemp, secondCityFirstDayDescription );
+            //day2
+            showNextDays(SecondCityPicker, 8, secondCitySecondDayDate, secondCitySecondDayImage,
+                    secondCitySecondDayTemp, secondCitySecondDayDescription);
+            //day3
+            showNextDays(SecondCityPicker, 16, secondCityThirdDayDate, secondCityThirdDayImage,
+                    secondCityThirdDayTemp, secondCityThirdDayDescription);
+            //day4
+            showNextDays(SecondCityPicker, 24, secondCityFourthDayDate, secondCityFourthDayImage,
+                    secondCityFourthDayTemp, secondCityFourthDayDescription);
+            //day5
+            showNextDays(SecondCityPicker, 32, secondCityFifthDayDate, secondCityFifthDayImage,
+                    secondCityFifthDayTemp, secondCityFifthDayDescription);
+        }
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setStartView();
+        TextFields.bindAutoCompletion(firstCityPicker, cityReader.getCityNameWithCountryCodeMap().values());
+        TextFields.bindAutoCompletion(SecondCityPicker, cityReader.getCityNameWithCountryCodeMap().values());
+
+    }
+    private void setStartView() {
+        try {
+            firstCityPicker.setText("Kielce, PL");
+            SecondCityPicker.setText("Crete, GR");
+            showCurrentWeather(firstCityPicker, firstCity, firstCityFirstDayDate, firstCityFirstDayImage,
+                    firstCityFirstDayTemp, firstCityFirstDayDescription );
+            //day2
+            showNextDays(firstCityPicker, 8, firstCitySecondDayDate, firstCitySecondDayImage,
+                    firstCitySecondDayTemp, firstCitySecondDayDescription);
+            //day3
+            showNextDays(firstCityPicker, 16, firstCityThirdDayDate, firstCityThirdDayImage,
+                    firstCityThirdDayTemp, firstCityThirdDayDescription);
+            //day4
+            showNextDays(firstCityPicker, 24, firstCityFourthDayDate, firstCityFourthDayImage,
+                    firstCityFourthDayTemp, firstCityFourthDayDescription);
+            //day5
+            showNextDays(firstCityPicker, 32, firstCityFifthDayDate, firstCityFifthDayImage,
+                    firstCityFifthDayTemp, firstCityFifthDayDescription);
+            showCurrentWeather(SecondCityPicker, secondCity, secondCityFirstDayDate, secondCityFirstDayImage,
+                    secondCityFirstDayTemp, secondCityFirstDayDescription );
+            //day2
+            showNextDays(SecondCityPicker, 8, secondCitySecondDayDate, secondCitySecondDayImage,
+                    secondCitySecondDayTemp, secondCitySecondDayDescription);
+            //day3
+            showNextDays(SecondCityPicker, 16, secondCityThirdDayDate, secondCityThirdDayImage,
+                    secondCityThirdDayTemp, secondCityThirdDayDescription);
+            //day4
+            showNextDays(SecondCityPicker, 24, secondCityFourthDayDate, secondCityFourthDayImage,
+                    secondCityFourthDayTemp, secondCityFourthDayDescription);
+            //day5
+            showNextDays(SecondCityPicker, 32, secondCityFifthDayDate, secondCityFifthDayImage,
+                    secondCityFifthDayTemp, secondCityFifthDayDescription);
+        } catch (APIException e) {
+            e.printStackTrace();
+        }
+    }
+    private void showCurrentWeather(TextField locationField, Label locationName, Label locationDate,
+                                    ImageView locationImage, Label locationTemp, Label locationWeather
+                                    ) throws APIException {
+
+        var weather = weatherForecastFetcher.getWeatherForecast(locationField.getText());
+        int currentTimeIndex = 0;
+
+        String cityNameWithCountryCode = weather.getCityName() + ", " + weather .getCountryCode();
+        String dateWithDay =
+                weather.getDayOfTheWeek(currentTimeIndex) + ", " + weather.getDateWithoutTime(currentTimeIndex);
+        Image image = new Image(weather .getIconLink(currentTimeIndex));
+        String temp = weather .getTemp(currentTimeIndex);
+        String description = weather .getDescription(currentTimeIndex);
+
+        locationName.setText(cityNameWithCountryCode);
+        locationDate.setText(dateWithDay);
+        locationImage.setImage(image);
+        locationTemp.setText(temp);
+        locationWeather.setText(description);
 
     }
 
+    private void showNextDays(TextField locationField, int timeIndex, Label locationDate,
+                              ImageView locationImage, Label locationTemp, Label locationWeather) throws APIException {
 
+
+        var weather = weatherForecastFetcher.getWeatherForecast(locationField.getText());
+        //int currentTimeIndex = 0;
+        String dateWithDay =
+                weather.getDayOfTheWeek(timeIndex) + ", " + weather.getDateWithoutTime(timeIndex);
+        Image image = new Image(weather .getIconLink(timeIndex));
+        String temp = weather .getTemp(timeIndex);
+        String description = weather .getDescription(timeIndex);
+
+
+        locationDate.setText(dateWithDay);
+        locationImage.setImage(image);
+        locationTemp.setText(temp);
+        locationWeather.setText(description);
+
+
+
+        }
+
+
+    private boolean firstFieldIsValid() {
+        if(firstCityPicker.getText().isEmpty()) {
+            firstCityErrorLabel.setText("Please enter the first city");
+            return false;
+        }
+        firstCityPicker.setText("");
+        return true;
+    }
+
+    private boolean secondFieldIsValid() {
+        if(SecondCityPicker.getText().isEmpty()) {
+            SecondCityPicker.setText("Please enter the second city");
+            return false;
+        }
+        secondCityErrorLabel.setText("");
+        return true;
+    }
 
 
 }
