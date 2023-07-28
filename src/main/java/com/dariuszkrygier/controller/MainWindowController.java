@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import net.aksingh.owmjapis.api.APIException;
 import org.controlsfx.control.textfield.TextFields;
@@ -186,6 +187,9 @@ public class MainWindowController extends BaseController implements Initializabl
     @FXML
     private Label secondCityThirdDayTemp;
 
+    @FXML
+    private AnchorPane mainAnchor;
+
     private final CityReader cityReader;
     private final WeatherForecastFetcher weatherForecastFetcher;
 
@@ -199,6 +203,7 @@ public class MainWindowController extends BaseController implements Initializabl
     @FXML
     void changeFirstCityLocationButtonAction() throws APIException {
         if (firstFieldIsValid()) {
+
             showCurrentWeather(firstCityPicker, firstCity, firstCityFirstDayDate, firstCityFirstDayImage,
                     firstCityFirstDayTemp, firstCityFirstDayDescription );
             //day2
@@ -306,6 +311,7 @@ public class MainWindowController extends BaseController implements Initializabl
 
         var weather = weatherForecastFetcher.getWeatherForecast(locationField.getText());
         //int currentTimeIndex = 0;
+
         String dateWithDay =
                 weather.getDayOfTheWeek(timeIndex) + ", " + weather.getDateWithoutTime(timeIndex);
         Image image = new Image(weather .getIconLink(timeIndex));
