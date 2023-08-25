@@ -305,7 +305,7 @@ public class MainWindowController extends BaseController implements Initializabl
 
     }
 
-    private void showNextDays(TextField locationField, int timeIndex, Label locationDate,
+    private void showNextDays(TextField locationField,  int timeIndex, Label locationDate,
                               ImageView locationImage, Label locationTemp, Label locationWeather) throws APIException {
 
 
@@ -334,13 +334,13 @@ public class MainWindowController extends BaseController implements Initializabl
             firstCityErrorLabel.setText("Please enter the first city");
             return false;
         }
-        firstCityPicker.setText("");
+        firstCityErrorLabel.setText("");
         return true;
     }
 
     private boolean secondFieldIsValid() {
         if(SecondCityPicker.getText().isEmpty()) {
-            SecondCityPicker.setText("Please enter the second city");
+            secondCityErrorLabel.setText("Please enter the second city");
             return false;
         }
         secondCityErrorLabel.setText("");
