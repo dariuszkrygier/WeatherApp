@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,12 +11,23 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<AnchorPane fx:id="anchor" prefHeight="651.0" prefWidth="1130.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
 
-<AnchorPane prefHeight="651.0" prefWidth="1130.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
+      <ImageView fx:id="back" fitHeight="677.0" fitWidth="1130.0" opacity="0.41">
+         <image>
+            <Image url="@../../../../../background.jpg" />
+         </image>
+      </ImageView>
       <Line endX="-100.0" endY="-257.0" layoutX="675.0" layoutY="248.0" startX="-100.0" startY="428.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="40.0" prefHeight="33.0" prefWidth="164.0" text="FIRST CITY" textAlignment="CENTER" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="783.0" layoutY="40.0" prefHeight="33.0" prefWidth="164.0" text="SECOND CITY" textAlignment="CENTER" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="40.0" prefHeight="33.0" prefWidth="164.0" text="FIRST CITY" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="783.0" layoutY="40.0" prefHeight="33.0" prefWidth="164.0" text="SECOND CITY" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font></Label>
       <Label fx:id="firstCity" layoutX="24.0" layoutY="79.0" prefHeight="33.0" prefWidth="164.0" text="Label" />
       <Label fx:id="secondCity" layoutX="593.0" layoutY="79.0" prefHeight="33.0" prefWidth="164.0" text="Label" />
       <Pane fx:id="firstCityFirstDayPane" layoutX="24.0" layoutY="130.0" prefHeight="140.0" prefWidth="522.0" style="-fx-border-color: #000000;">
@@ -30,8 +42,14 @@
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="firstCityFirstDayDate" layoutY="68.0" prefHeight="70.0" prefWidth="122.0" text="Label" />
-            <Label prefHeight="70.0" prefWidth="122.0" text="Today" />
+            <Label fx:id="firstCityFirstDayDate" layoutY="68.0" prefHeight="70.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label prefHeight="70.0" prefWidth="122.0" text="Today">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
             <Label fx:id="firstCityFirstDayDescription" layoutX="401.0" layoutY="-1.0" prefHeight="140.0" prefWidth="122.0" text="Label" />
          </children>
       </Pane>
@@ -47,105 +65,159 @@
                   <Font size="34.0" />
                </font>
             </Label>
-            <Label prefHeight="70.0" prefWidth="122.0" text="Today" />
-            <Label fx:id="secondCityFirstDayDate" layoutY="70.0" prefHeight="70.0" prefWidth="122.0" text="Label" />
+            <Label prefHeight="70.0" prefWidth="122.0" text="Today">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <Label fx:id="secondCityFirstDayDate" layoutY="70.0" prefHeight="70.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
             <Label fx:id="secondCityFirstDayDescription" layoutX="402.0" prefHeight="140.0" prefWidth="122.0" text="Label" />
          </children>
       </Pane>
       <Pane fx:id="firstCitySecondDayPane" layoutX="24.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="firstCitySecondDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="firstCitySecondDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="41.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="firstCitySecondDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="firstCitySecondDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="firstCitySecondDayTemp" layoutX="80.0" layoutY="28.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="firstCitySecondDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="firstCitySecondDayTemp" layoutX="53.0" layoutY="28.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="firstCitySecondDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <Pane fx:id="firstCityThirdDayPane" layoutX="157.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="firstCityThirdDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="firstCityThirdDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="45.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="firstCityThirdDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="firstCityThirdDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="firstCityThirdDayTemp" layoutX="84.0" layoutY="25.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="firstCityThirdDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="firstCityThirdDayTemp" layoutX="53.0" layoutY="25.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="firstCityThirdDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <Pane fx:id="firstCityFourthDayPane" layoutX="291.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="firstCityFourthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="firstCityFourthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="42.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="firstCityFourthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="firstCityFourthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="firstCityFourthDayTemp" layoutX="81.0" layoutY="28.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="firstCityFourthDayDescription" layoutX="1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="firstCityFourthDayTemp" layoutX="53.0" layoutY="28.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="firstCityFourthDayDescription" layoutX="1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <Pane fx:id="firstCityFifthDayPane" layoutX="424.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="firstCityFifthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="firstCityFifthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="42.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="firstCityFifthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="firstCityFifthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="firstCityFifthDayTemp" layoutX="81.0" layoutY="28.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="firstCityFifthDayDescription" layoutX="1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="firstCityFifthDayTemp" layoutX="53.0" layoutY="28.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="firstCityFifthDayDescription" layoutX="1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <Pane fx:id="secondCitySecondDayPane" layoutX="593.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="secondCitySecondDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="secondCitySecondDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="42.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="secondCitySecondDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="secondCitySecondDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="secondCitySecondDayTemp" layoutX="81.0" layoutY="28.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="secondCitySecondDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="secondCitySecondDayTemp" layoutX="53.0" layoutY="28.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="secondCitySecondDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <Pane fx:id="secondCityThirdDayPane" layoutX="725.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="secondCityThirdDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="secondCityThirdDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="42.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="secondCityThirdDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="secondCityThirdDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="secondCityThirdDayTemp" layoutX="81.0" layoutY="28.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="secondCityThirdDayDescription" layoutX="1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="secondCityThirdDayTemp" layoutX="53.0" layoutY="28.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="secondCityThirdDayDescription" layoutX="1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <Pane fx:id="secondCityFourthDayPane" layoutX="857.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="secondCityFourthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="secondCityFourthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="40.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="secondCityFourthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="secondCityFourthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="secondCityFourthDayTemp" layoutX="79.0" layoutY="28.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="secondCityFourthDayDescription" layoutX="-1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="secondCityFourthDayTemp" layoutX="53.0" layoutY="28.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="secondCityFourthDayDescription" layoutX="-1.0" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <Pane fx:id="secondCityFifthDayPane" layoutX="989.0" layoutY="309.0" prefHeight="120.0" prefWidth="122.0" style="-fx-border-color: #000000;">
          <children>
-            <Label fx:id="secondCityFifthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label" />
-            <ImageView fx:id="secondCityFifthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="40.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="secondCityFifthDayDate" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
+            <ImageView fx:id="secondCityFifthDayImage" fitHeight="39.0" fitWidth="40.0" layoutX="14.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../work/WeatherApp/src/main/resources/com/dariuszkrygier/view/icons/01d.png" />
                </image>
             </ImageView>
-            <Label fx:id="secondCityFifthDayTemp" layoutX="79.0" layoutY="29.0" prefHeight="39.0" prefWidth="39.0" text="7 C" />
-            <Label fx:id="secondCityFifthDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label" />
+            <Label fx:id="secondCityFifthDayTemp" layoutX="53.0" layoutY="29.0" prefHeight="39.0" prefWidth="57.0" text="7 C" />
+            <Label fx:id="secondCityFifthDayDescription" layoutY="81.0" prefHeight="39.0" prefWidth="122.0" text="Label">
+               <padding>
+                  <Insets left="5.0" />
+               </padding></Label>
          </children>
       </Pane>
       <TextField fx:id="firstCityPicker" layoutX="217.0" layoutY="472.0" />

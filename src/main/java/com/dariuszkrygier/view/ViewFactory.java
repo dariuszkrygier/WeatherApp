@@ -3,8 +3,13 @@ package com.dariuszkrygier.view;
 import com.dariuszkrygier.controller.BaseController;
 import com.dariuszkrygier.controller.MainWindowController;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -33,7 +38,9 @@ public class ViewFactory {
             e.printStackTrace();
             return;
         }
+
         Scene scene = new Scene(parent);
+        scene.getStylesheets().add(getClass().getResource("css/default.css").toExternalForm());
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();

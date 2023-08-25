@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import net.aksingh.owmjapis.api.APIException;
 import org.controlsfx.control.textfield.TextFields;
 
@@ -21,6 +22,9 @@ public class MainWindowController extends BaseController implements Initializabl
 
     @FXML
     private TextField SecondCityPicker;
+
+    @FXML
+    private AnchorPane anchor;
 
     @FXML
     private Label firstCity;
@@ -242,6 +246,7 @@ public class MainWindowController extends BaseController implements Initializabl
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         setStartView();
         TextFields.bindAutoCompletion(firstCityPicker, cityReader.getCityNameWithCountryCodeMap().values());
         TextFields.bindAutoCompletion(SecondCityPicker, cityReader.getCityNameWithCountryCodeMap().values());
@@ -249,6 +254,7 @@ public class MainWindowController extends BaseController implements Initializabl
     }
     private void setStartView() {
         try {
+
             firstCityPicker.setText("Kielce, PL");
             SecondCityPicker.setText("Crete, GR");
             showCurrentWeather(firstCityPicker, firstCity, firstCityFirstDayDate, firstCityFirstDayImage,
@@ -303,6 +309,7 @@ public class MainWindowController extends BaseController implements Initializabl
         locationTemp.setText(temp);
         locationWeather.setText(description);
 
+
     }
 
     private void showNextDays(TextField locationField,  int timeIndex, Label locationDate,
@@ -327,6 +334,8 @@ public class MainWindowController extends BaseController implements Initializabl
 
 
         }
+
+
 
 
     private boolean firstFieldIsValid() {

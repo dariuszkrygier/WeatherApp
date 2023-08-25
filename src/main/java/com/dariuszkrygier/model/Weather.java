@@ -3,6 +3,7 @@ package com.dariuszkrygier.model;
 
 import net.aksingh.owmjapis.model.HourlyWeatherForecast;
 
+import java.text.NumberFormat;
 import java.util.Objects;
 
 
@@ -58,13 +59,17 @@ public class Weather {
 
 
     public String getTemp(int forecastIndex) {
+        NumberFormat nf= NumberFormat.getInstance();
+        nf.setMaximumFractionDigits(2);
         if (hourlyWeatherForecast.getDataList().get(forecastIndex).getMainData().hasTemp()) {
-            return hourlyWeatherForecast.getDataList().get(forecastIndex).getMainData().getTemp() + " °C";
+            return nf.format(hourlyWeatherForecast.getDataList().get(forecastIndex).getMainData().getTemp())  + " °C";
         }
         return null;
     }
 
     public String getHumidity(int forecastIndex) {
+
+
         if (hourlyWeatherForecast.getDataList().get(forecastIndex).getMainData().hasHumidity()) {
             return hourlyWeatherForecast.getDataList().get(forecastIndex).getMainData().getHumidity() + " %";
         }
