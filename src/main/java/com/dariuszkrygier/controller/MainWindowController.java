@@ -317,7 +317,6 @@ public class MainWindowController extends BaseController implements Initializabl
 
 
         var weather = weatherForecastFetcher.getWeatherForecast(locationField.getText());
-        //int currentTimeIndex = 0;
 
         String dateWithDay =
                 weather.getDayOfTheWeek(timeIndex) + ", " + weather.getDateWithoutTime(timeIndex);

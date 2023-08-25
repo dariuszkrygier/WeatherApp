@@ -14,12 +14,6 @@ public class Weather {
         this.hourlyWeatherForecast = hourlyWeatherForecast;
     }
 
-    public Integer getForecastSize() {
-        if (hourlyWeatherForecast.hasDataCount()) {
-            return hourlyWeatherForecast.getDataCount();
-        }
-        return null;
-    }
 
     public String getCityName() {
         if (hourlyWeatherForecast.getCityData().hasName()) {
@@ -53,9 +47,7 @@ public class Weather {
         return getDateTimeText(forecastIndex).substring(0, 10);
     }
 
-    public String getTimeWithoutDate(int forecastIndex) {
-        return getDateTimeText(forecastIndex).substring(11);
-    }
+
 
 
     public String getTemp(int forecastIndex) {
@@ -67,33 +59,10 @@ public class Weather {
         return null;
     }
 
-    public String getHumidity(int forecastIndex) {
-
-
-        if (hourlyWeatherForecast.getDataList().get(forecastIndex).getMainData().hasHumidity()) {
-            return hourlyWeatherForecast.getDataList().get(forecastIndex).getMainData().getHumidity() + " %";
-        }
-        return null;
-    }
-
-    public String getWindSpeed(int forecastIndex) {
-        if (hourlyWeatherForecast.getDataList().get(forecastIndex).getWindData().hasSpeed()) {
-            return Math.round(hourlyWeatherForecast.getDataList().get(forecastIndex).getWindData().getSpeed() * 3.6) +
-                    " km/h";
-        }
-        return null;
-    }
 
     public String getDescription(int forecastIndex) {
         if (hourlyWeatherForecast.getDataList().get(forecastIndex).getWeatherList().get(0).hasDescription()) {
             return hourlyWeatherForecast.getDataList().get(forecastIndex).getWeatherList().get(0).getDescription();
-        }
-        return null;
-    }
-
-    public String getMainWeather(int forecastIndex) {
-        if (hourlyWeatherForecast.getDataList().get(forecastIndex).getWeatherList().get(0).hasMainInfo()) {
-            return hourlyWeatherForecast.getDataList().get(forecastIndex).getWeatherList().get(0).getMainInfo();
         }
         return null;
     }
